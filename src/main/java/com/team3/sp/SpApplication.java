@@ -26,7 +26,7 @@ public class SpApplication {
 		cliente.setCorreo("juanito.banana@yahoo.com");
 		cliente.setTelefono("55463728");
 		cliente.setSaldo(10000.00);
-		System.out.println(cliente.getDireccion());
+		System.out.println(cliente);
 		
 		/*Crea archivo JSON
 		ObjectMapper mapper = new ObjectMapper();
@@ -38,7 +38,7 @@ public class SpApplication {
 
 		Cliente client = mapper.readValue(new File("D:\\cliente.json"), Cliente.class);
 
-		System.out.println("OBJETO CLIENTE: \n" + client.getSaldo());
+		System.out.println("OBJETO CLIENTE: \n" + client);
 	}
 	////////////////////
 }
