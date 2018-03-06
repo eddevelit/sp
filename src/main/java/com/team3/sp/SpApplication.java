@@ -34,11 +34,11 @@ public class SpApplication {
 		
 		mapper.writerWithDefaultPrettyPrinter().writeValue(new File("D:\\cliente.json"), cliente);
 		System.out.println("SALIDA JSON: \n" + json);*///Crea archivo JSON
+		//Leyendo un JSON
 		ObjectMapper mapper = new ObjectMapper();
-
 		Cliente client = mapper.readValue(new File("D:\\cliente.json"), Cliente.class);
-
-		System.out.println("OBJETO CLIENTE: \n" + client);
+		String json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(client);
+		System.out.println("OBJETO CLIENTE: \n" + json);
 	}
 	////////////////////
 }
