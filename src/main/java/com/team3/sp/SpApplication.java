@@ -8,5 +8,7 @@ public class SpApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpApplication.class, args);
+		
+		System.out.println("Hola desde consola");
 	}
 }
