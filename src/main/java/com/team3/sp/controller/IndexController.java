@@ -17,8 +17,8 @@ public class IndexController {
 	
 	@PostMapping(value = "clienteForm")
 	public String clienteForm (Cliente cliente) {
+		//agregar valores del form
 		System.out.println("ClienteController: \n" + cliente.getCorreo());
 		return "registro";
 	}
-	
 }
