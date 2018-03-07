@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org" />
+    <title>Registro de clientes</title>
+
+    <!--Agregando referencia a bootstrap-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+
+    <!-- Agregando referencia para JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <span th:text="${cliente.Nombre}"></span>
+        <br/>
+        <span th:text="${cliente.Correo}"></span>
+        <br/>
+        <span th:text="${cliente.Telefono}"></span>
+        <br/>
+        <span th:text="${cliente.Direccion}"></span>
+        <br/>
+        <span th:text="${cuenta.Saldo}"></span>
+    </div>
+</body>
+
+</html>
