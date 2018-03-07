@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.ui.Model;
 import com.team3.sp.model.Cliente;
+import com.team3.sp.model.Cuenta;
 
 @Controller
 public class IndexController {
@@ -20,10 +21,11 @@ public class IndexController {
 	}
 	
 	@PostMapping("/addCliente")
-	public ModelAndView addCliente(@ModelAttribute("cliente") Cliente cliente)
+	public ModelAndView addCliente(@ModelAttribute("cliente") Cliente cliente,@ModelAttribute("cuenta") Cuenta cuenta)
 	{
 		ModelAndView mav = new ModelAndView("registro");
 		mav.addObject("cliente", cliente);
+		mav.addObject("cuenta", cuenta);
 		return mav;
 		
 	}
