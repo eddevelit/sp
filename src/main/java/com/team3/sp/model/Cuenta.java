@@ -48,4 +48,6 @@ public class Cuenta {
 	public void setId_cliente(int id_cliente) {
 		this.id_cliente = id_cliente;
 	}
+	
+	public Cuenta (){}
 }
