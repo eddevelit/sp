@@ -13,6 +13,9 @@
 
     <!-- Agregando referencia para JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    
+    <!-- Agregando libreria de google -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 
 <body>
@@ -20,6 +23,7 @@
         <div>
             <h1>Registro de clientes</h1>
         </div>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
         <form method="post" action="#" th:action=@{/addCliente} th:object="${cliente}">
             <div class="form-group">
                 <label for="nombreInput">Nombre</label>
