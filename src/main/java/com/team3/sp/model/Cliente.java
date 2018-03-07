@@ -76,5 +76,33 @@ public class Cliente {
 	public void setSaldo(double saldo) {
 		Saldo = saldo;
 	}
+	//lo almacedano en la clase InputData
+	private String Ejecutivo;
 	
+	public String getEjecutivo() {
+		return Ejecutivo;
+	}
+
+	public void setEjecutivo(String ejecutivo) {
+		Ejecutivo = ejecutivo;
+	}
+
+	
+	
+	public Cliente(String nombre, String telefono, String direccion, String correo, String ejecutivo, double saldo) {
+		super();
+		this.Nombre = nombre;
+		this.Telefono = telefono;
+		this.Direccion = direccion;
+		this.Correo = correo;
+		this.Ejecutivo = ejecutivo;
+		this.Saldo = saldo;
+	}
+	
+	@Override
+	public String toString() {
+		return "Cliente [nombre=" + Nombre + ", telefono=" + Telefono + ", direccion=" + Direccion + ", correo=" + Correo
+				+ ", ejecutivo=" + Ejecutivo + ", saldo=" + Saldo + "]";
+	}
+	public Cliente(){}
 }

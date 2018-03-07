@@ -6,6 +6,7 @@ import java.io.IOException;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.team3.sp.model.Cliente;
@@ -16,6 +17,11 @@ public class SpApplication {
 	public static void main(String[] args) throws IOException {
 		SpringApplication.run(SpApplication.class, args);
 		escribirJSON();//Crear archivo JASON
+		ejecutarstord();
+	}
+	
+	private static void ejecutarstord() {
+		
 	}
 	////////Prueba JSON--- Objeto a JSON
 	public static void escribirJSON() throws IOException {
