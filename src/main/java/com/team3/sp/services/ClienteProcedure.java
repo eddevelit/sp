@@ -15,13 +15,13 @@ import org.springframework.stereotype.Service;
 import com.team3.sp.model.Cliente;
 import com.team3.sp.model.Cuenta;
 
-@Service("StoredProcedure")
+@Service("storedprocedure")
 public class ClienteProcedure extends StoredProcedure{
-private static final String generaCliente = "generaCliente";
+private static final String GENERACLIENTE = "generaCliente";
 	
 	@Autowired
-	public ClienteProcedure(DataSource dataSource, String procedureName){
-		super(dataSource, generaCliente);
+	ClienteProcedure(DataSource dataSource){
+		super(dataSource, GENERACLIENTE);
 		//declarando los parametros del procedimiento
 			declareParameter(new SqlParameter("nombre", Types.VARCHAR));
 			declareParameter(new SqlParameter("direccion", Types.VARCHAR));
@@ -48,7 +48,7 @@ private static final String generaCliente = "generaCliente";
 			return new Cuenta(out);
 	        	
 	}
-	   
+	     
 	
 	
 }
