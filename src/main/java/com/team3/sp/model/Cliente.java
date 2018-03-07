@@ -77,4 +77,7 @@ public class Cliente {
 		Saldo = saldo;
 	}
 	
+	//Se genera contructor por default para inicializar campos
+	public Cliente() {}
+	
 }
