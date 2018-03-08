@@ -12,6 +12,8 @@ import com.team3.sp.model.Cuenta;
 @Controller
 public class IndexController {
 	
+	//private static final StoredService sproc = new StoredService();
+	
 	@GetMapping("/")
 	public String index(Model model)
 	{
@@ -26,6 +28,7 @@ public class IndexController {
 		ModelAndView mav = new ModelAndView("registro");
 		mav.addObject("cliente", cliente);
 		mav.addObject("cuenta", cuenta);
+		//sproc.excecute(ObjetoChido);
 		return mav;
 		
 	}
