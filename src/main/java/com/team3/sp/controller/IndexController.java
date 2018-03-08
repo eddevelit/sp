@@ -36,21 +36,21 @@ public class IndexController {
 	}
 	
 	@PostMapping("/addCliente")
-	@ResponseBody
-	public OutputData alta(@RequestBody InputData input) {
-		return clienteprocedure.execute(input);
-	}
-	/*
-	public ModelAndView addCliente(@ModelAttribute("cliente") Cliente cliente,@ModelAttribute("cuenta") Cuenta cuenta)
+	public ModelAndView addCliente(@ModelAttribute("inputData") InputData inputData)
 	{
 		ModelAndView mav = new ModelAndView("registro");
-		mav.addObject("cliente", cliente);
-		mav.addObject("cuenta", cuenta);
+		mav.addObject("cliente", inputData);
 		//sproc.excecute(ObjetoChido);
 		return mav;
 		
 	}
+	/*
+	@ResponseBody
+	public OutputData alta(@RequestBody InputData input) {
+		return clienteprocedure.execute(input);
+	}
 	*/
+	
 	
 	
 }
