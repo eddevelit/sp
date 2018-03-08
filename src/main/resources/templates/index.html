@@ -35,7 +35,7 @@
         	<p>Datos del perfil</p>
         	<img alt="perfil" class="img-circle" width="100" height="100" id="pic"/>
         	<p>Email</p>
-        	<p id="email" class="alert alert-danger"></p>
+        	<p id="email"></p>
         	<button onclick="signOut()" class="btn btn-danger">Cerrar Sesión</button>
         </div>
         <form method="post" action="#" th:action=@{/addCliente} th:object="${cliente}">
@@ -59,6 +59,10 @@
                 <label for="saldoInput">Saldo</label>
                 <input type="number" class="form-control" id="saldoInput" placeholder="500.00" th:field="*{Saldo}">
             </div>
+            <div class="form-group">
+                <label for="ejecutivoInput">Ejecutivo</label>
+                <input type="text" class="form-control" id="ejecutivoInput" placeholder="ejecutivo@mail.com" disabled>
+            </div>
             <button type="submit" class="btn btn-primary">Agregar</button>
         </form>
     </div>
@@ -70,6 +74,8 @@
     		$(".data").css("display","block");
     		$("#pic").attr('src',profile.getImageUrl());
     		$("#email").text(profile.getEmail());
+    		$("ejecutivoInput").text(profile.getEmail());
+    		document.getElementById('ejecutivoInput').value = profile.getEmail();
     	}
     	
     	function signOut()
