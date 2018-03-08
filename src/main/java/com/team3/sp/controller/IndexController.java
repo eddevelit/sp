@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.ui.Model;
 
 import com.team3.sp.model.Cliente;
+import com.team3.sp.model.Cuenta;
 import com.team3.sp.model.InputData;
 import com.team3.sp.model.OutputData;
 import com.team3.sp.services.ClienteProcedure;
@@ -35,12 +36,12 @@ public class IndexController {
 	return "index";	
 	}
 	
-	@PostMapping("/addCliente")
+	/*@PostMapping("/addCliente")
 	@ResponseBody
 	public OutputData alta(@RequestBody InputData input) {
 		return clienteprocedure.execute(input);
-	}
-	/*
+	}*/
+	@PostMapping("/addCliente")
 	public ModelAndView addCliente(@ModelAttribute("cliente") Cliente cliente,@ModelAttribute("cuenta") Cuenta cuenta)
 	{
 		ModelAndView mav = new ModelAndView("registro");
@@ -50,7 +51,7 @@ public class IndexController {
 		return mav;
 		
 	}
-	*/
+	
 	
 	
 }
