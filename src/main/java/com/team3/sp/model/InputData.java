@@ -48,17 +48,17 @@ public class InputData {
 		Saldo = saldo;
 	}
 
-		public String getEjecutivo() {
+	public String getEjecutivo() {
 			return Ejecutivo;
-		}
+	}
 
-		public void setEjecutivo(String ejecutivo) {
+	public void setEjecutivo(String ejecutivo) {
 			Ejecutivo = ejecutivo;
-		}
+	}
 
 		
 		
-		public InputData(String nombre, String telefono, String direccion, String correo, String ejecutivo, double saldo) {
+	public InputData(String nombre, String telefono, String direccion, String correo, String ejecutivo, double saldo) {
 			super();
 			this.Nombre = nombre;
 			this.Telefono = telefono;
@@ -66,12 +66,12 @@ public class InputData {
 			this.Correo = correo;
 			this.Ejecutivo = ejecutivo;
 			this.Saldo = saldo;
-		}
+	}
 		
-		@Override
-		public String toString() {
-			return "InputData [nombre=" + Nombre + ", telefono=" + Telefono + ", direccion=" + Direccion + ", correo=" + Correo
+	@Override
+	public String toString() {
+		return "InputData [nombre=" + Nombre + ", telefono=" + Telefono + ", direccion=" + Direccion + ", correo=" + Correo
 					+ ", ejecutivo=" + Ejecutivo + ", saldo=" + Saldo + "]";
-		}
+	}
 		public InputData(){}
 }
