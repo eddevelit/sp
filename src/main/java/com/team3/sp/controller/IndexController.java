@@ -15,7 +15,8 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.ui.Model;
 
 import com.team3.sp.model.Cliente;
-import com.team3.sp.model.Cuenta;
+import com.team3.sp.model.InputData;
+import com.team3.sp.model.OutputData;
 import com.team3.sp.services.ClienteProcedure;
 
 @Controller
@@ -34,7 +35,7 @@ public class IndexController {
 	
 	@PostMapping("/addCliente")
 	@ResponseBody
-	public Cuenta alta(@RequestBody Cliente input) {
+	public OutputData alta(@RequestBody InputData input) {
 		return clienteprocedure.execute(input);
 	}
 	/*
