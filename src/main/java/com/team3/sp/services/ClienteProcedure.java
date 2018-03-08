@@ -12,8 +12,8 @@ import org.springframework.jdbc.core.SqlParameter;
 import org.springframework.jdbc.object.StoredProcedure;
 import org.springframework.stereotype.Service;
 
-import com.team3.sp.model.Cliente;
-import com.team3.sp.model.Cuenta;
+import com.team3.sp.model.InputData;
+import com.team3.sp.model.OutputData;
 
 @Service("storedprocedure")
 public class ClienteProcedure extends StoredProcedure{
@@ -34,7 +34,7 @@ private static final String GENERACLIENTE = "generaCliente";
 			declareParameter(new SqlOutParameter("saldoout", Types.INTEGER));
 			compile();
 	}
-	public Cuenta execute(Cliente input){
+	public OutputData execute(InputData input){
 	      Map<String, Object> inParams = new HashMap<String, Object>();
 	      inParams.put("nombre", input.getNombre());
 	      inParams.put("direccion", input.getDireccion());
@@ -45,7 +45,7 @@ private static final String GENERACLIENTE = "generaCliente";
 	      
 	      Map<String, Object> out = super.execute(inParams);
 			out.put("idClienteOut", String.format("%08d", out.get("idcliente")));
-			return new Cuenta(out);
+			return new OutputData(out);
 	        	
 	}
 	     
