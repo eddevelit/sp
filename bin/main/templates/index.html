@@ -31,6 +31,13 @@
             <h1>Registro de clientes</h1>
         </div>
         <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <div class="data">
+        	<p>Datos del perfil</p>
+        	<img alt="perfil" class="img-circle" width="100" height="100"/>
+        	<p>Email</p>
+        	<p id="email" class="alert alert-danger"></p>
+        	<button onclick="signOut()" class="btn btn-danger">Cerrar Sesión</button>
+        </div>
         <form method="post" action="#" th:action=@{/addCliente} th:object="${cliente}">
             <div class="form-group">
                 <label for="nombreInput">Nombre</label>
