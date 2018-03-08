@@ -25,6 +25,8 @@ public class IndexController {
 	@Qualifier("storedprocedure")
 	private ClienteProcedure clienteprocedure;
 	
+	//private static final StoredService sproc = new StoredService();
+	
 	@GetMapping("/")
 	public String index(Model model)
 	{
@@ -44,6 +46,7 @@ public class IndexController {
 		ModelAndView mav = new ModelAndView("registro");
 		mav.addObject("cliente", cliente);
 		mav.addObject("cuenta", cuenta);
+		//sproc.excecute(ObjetoChido);
 		return mav;
 		
 	}

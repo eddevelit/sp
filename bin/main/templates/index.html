@@ -5,7 +5,7 @@
     <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org" />
     
     <!-- Agregando cliente id para oauth -->
-    <meta name="google_signin-client_id" content="176540452726-b3534csjqor8pbe4ui3acss4knjocuom.apps.googleusercontent.com"/>
+    <meta name="google-signin-client_id" content="517217357550-hpi34a0pbicck0ns551d3qadb0fg01sg.apps.googleusercontent.com"/>
     <title>Registro de clientes</title>
 
     <!--Agregando referencia a bootstrap-->
@@ -13,12 +13,30 @@
 
     <!-- Agregando referencia para JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    
+    <!-- Agregando libreria de google -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    
+    <style type="text/css">
+		.g-signin2{
+			margin-left:900px;
+			margin-top:10px;
+		}    
+    </style>
 </head>
 
 <body>
     <div class="container border-left border-right">
         <div>
             <h1>Registro de clientes</h1>
+        </div>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <div class="data">
+        	<p>Datos del perfil</p>
+        	<img alt="perfil" class="img-circle" width="100" height="100" id="pic"/>
+        	<p>Email</p>
+        	<p id="email" class="alert alert-danger"></p>
+        	<button onclick="signOut()" class="btn btn-danger">Cerrar Sesión</button>
         </div>
         <form method="post" action="#" th:action=@{/addCliente} th:object="${cliente}">
             <div class="form-group">
@@ -44,6 +62,26 @@
             <button type="submit" class="btn btn-primary">Agregar</button>
         </form>
     </div>
+    <script type="text/javascript">
+    	function onSignIn(googleUser)
+    	{
+    		var profile=googleUser.getBasicProfile();
+    		$(".g-signin2").css("display","none");
+    		$(".data").css("display","block");
+    		$("#pic").attr('src',profile.getImageUrl());
+    		$("#email").text(profile.getEmail());
+    	}
+    	
+    	function signOut()
+    	{
+    		var auth2 = gapi.auth2.getAuthInstance();
+    		auth2.signOut().then(function(){
+    			alert("Sesión cerrada");
+    			$(".g-signin2").css("display","block");
+        		$(".data").css("display","none");
+    		});
+    	}
+    </script>
 </body>
 
 </html>
