@@ -31,7 +31,7 @@ private static final String GENERACLIENTE = "generaCliente";
 			declareParameter(new SqlParameter("ejecutivoemail", Types.VARCHAR));
 			declareParameter(new SqlOutParameter("idcliente", Types.INTEGER));
 			declareParameter(new SqlOutParameter("idcuenta", Types.INTEGER));
-			declareParameter(new SqlOutParameter("saldoout", Types.INTEGER));
+			declareParameter(new SqlOutParameter("saldoout", Types.DOUBLE));
 			compile();
 	}
 	public OutputData execute(InputData input){
@@ -44,7 +44,7 @@ private static final String GENERACLIENTE = "generaCliente";
 	      inParams.put("ejecutivoemail", input.getEjecutivo());
 	      
 	      Map<String, Object> out = super.execute(inParams);
-			out.put("idClienteOut", String.format("%08d", out.get("idcliente")));
+			out.put("idCliente", String.format("%08d", out.get("idcliente")));
 			return new OutputData(out);
 	        	
 	}
