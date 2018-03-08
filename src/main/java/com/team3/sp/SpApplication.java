@@ -15,9 +15,9 @@ public class SpApplication {
 
 	public static void main(String[] args) throws IOException {
 		SpringApplication.run(SpApplication.class, args);
-		escribirJSON();//Crear archivo JASON
+		//escribirJSON();//Crear archivo JASON
 	}
-	////////Prueba JSON--- Objeto a JSON
+	/*Prueba JSON--- Objeto a JSON
 	public static void escribirJSON() throws IOException {
 		Cliente cliente = new Cliente();
 		cliente.setId(1);
@@ -26,24 +26,19 @@ public class SpApplication {
 		cliente.setCorreo("juanito.banana@yahoo.com");
 		cliente.setTelefono("55463728");
 		cliente.setSaldo(10000.00);
-		System.out.println(cliente.getDireccion());
+		System.out.println(cliente);
 		
 		/*Crea archivo JSON
 		ObjectMapper mapper = new ObjectMapper();
 		String json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(cliente);
 		
 		mapper.writerWithDefaultPrettyPrinter().writeValue(new File("D:\\cliente.json"), cliente);
-		System.out.println("SALIDA JSON: \n" + json);*///Crea archivo JSON
+		System.out.println("SALIDA JSON: \n" + json);//Crea archivo JSON
 		//Leyendo un JSON
 		ObjectMapper mapper = new ObjectMapper();
 		Cliente client = mapper.readValue(new File("D:\\cliente.json"), Cliente.class);
-<<<<<<< HEAD
 		String json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(client);
 		System.out.println("OBJETO CLIENTE: \n" + json);
-=======
-
-		System.out.println("OBJETO CLIENTE: \n" + client.getSaldo());
->>>>>>> 268269cc111f69f91d2b21d2c48bd0d55cd9abf4
-	}
+	}*/
 	////////////////////
 }
