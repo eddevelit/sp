@@ -5,7 +5,7 @@
     <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org" />
     
     <!-- Agregando cliente id para oauth -->
-    <meta name="google_signin-client_id" content="176540452726-b3534csjqor8pbe4ui3acss4knjocuom.apps.googleusercontent.com"/>
+    <meta name="google-signin-client_id" content="73153729661-c17nfj0ls5qqtcti42lpij6fi6iortji.apps.googleusercontent.com"/>
     <title>Registro de clientes</title>
 
     <!--Agregando referencia a bootstrap-->
@@ -13,6 +13,16 @@
 
     <!-- Agregando referencia para JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    
+    <!-- Agregando libreria de google -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    
+    <style type="text/css">
+		.g-signin2{
+			margin-left:900px;
+			margin-top:10px;
+		}    
+    </style>
 </head>
 
 <body>
@@ -20,6 +30,7 @@
         <div>
             <h1>Registro de clientes</h1>
         </div>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
         <form method="post" action="#" th:action=@{/addCliente} th:object="${cliente}">
             <div class="form-group">
                 <label for="nombreInput">Nombre</label>
