@@ -27,9 +27,9 @@
             <div class="col-3 border-rigth">
                 <div class="g-signin2" data-onsuccess="onSignIn"></div>
                 <div class="data">
-                    <p>Datos del perfil</p>
+                    <b><p>Ejecutivo: </p></b>
                     <img alt="perfil" class="rounded-circle" width="100" height="100" id="pic" />
-                    <p>Email</p>
+                    <p id="nombreE"></p>
                     <p id="email"></p>
                     <button onclick="signOut()" class="btn btn-danger">Cerrar Sesión</button>
                 </div>
@@ -72,7 +72,7 @@
             $(".data").css("display", "block");
             $("#pic").attr('src', profile.getImageUrl());
             $("#email").text(profile.getEmail());
-            $("ejecutivoInput").text(profile.getEmail());
+            $("#nombreE").text(profile.getName());
             document.getElementById('ejecutivoInput').value = profile.getEmail();
         }
 
